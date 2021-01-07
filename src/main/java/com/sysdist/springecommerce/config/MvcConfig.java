@@ -8,8 +8,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public  class MvcConfig implements WebMvcConfigurer {
 
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/notprotected").setViewName("notprotected");
-        registry.addViewController("/").setViewName("notprotected");
+        registry.addViewController("/notprotected").setViewName("welcomePage");
+        registry.addViewController("/").setViewName("welcomePage");
         registry.addViewController("/protected").setViewName("protected");
         registry.addViewController("/login").setViewName("login");
         registry.addViewController("/logout").setViewName("disconnected");

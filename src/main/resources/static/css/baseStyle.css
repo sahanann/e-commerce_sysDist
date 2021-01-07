@@ -1,0 +1,60 @@
+:root {
+    --title-bar-color: rgb(235, 49, 95);
+    --primary-accent-color: rgb(252, 49, 83);
+    --second-title-color: rgb(255, 208, 215);
+    --main-button-color: rgb(253, 39, 86);
+    --main-button-hover: rgb(253, 65, 96);
+    --main-button-active: rgb(226, 17, 52);
+    --sec-button-color: rgb(255, 122, 144);
+    --sec-button-hover: rgb(255, 57, 90);
+    --sec-button-active: rgb(255, 41, 76);
+}
+
+body {
+    margin: 20px;
+    padding: 0;
+    /* font-family: sans-serif; */
+    font-family: 'Roboto', sans-serif;
+}
+
+.roundedBox {
+    margin: 100px auto auto;
+    width: 600px;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.roundedBox a {
+    text-align: center;
+    padding: 6px 2px;
+    user-select: none;
+    width: 100px;
+    font-size: 16px;
+    background-color: var(--main-button-color);
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+.roundedBox a:hover {
+    background-color: var(--main-button-hover);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.56);
+}
+
+.roundedBox a:active {
+    background-color: var(--main-button-active);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.46);
+}
+
+.roundedBox a {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    /*appearance: button;*/
+    text-decoration: none;
+}

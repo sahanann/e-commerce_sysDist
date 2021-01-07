@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Welcome to HEPL ecommerce</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/baseStyle.css">
+<!--    <link rel="stylesheet" type="text/css" href="baseStyle.css">-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="roundedBox">
+    <h1>Welcome to HEPL E-Commerce</h1>
+    <p>Please login to view the home page</p>
+    <a th:href="@{/protected}">here</a>
+</div>
+
+
+</body>
+</html>
