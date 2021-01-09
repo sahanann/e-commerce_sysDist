@@ -1,7 +1,7 @@
 package com.sysdist.springecommerce.config;
 
 
-import com.sysdist.springecommerce.model.User;
+import com.sysdist.springecommerce.models.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

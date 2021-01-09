@@ -1,0 +1,43 @@
+
+
+.errorBox {
+    margin: 20px auto auto;
+    width: 600px;
+}
+
+.formPanel input[type="text"], input[type="password"] {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.158);
+    background: transparent;
+    outline: none;
+    height: 36px;
+    color: rgb(31, 31, 31);
+    font-size: 16px;
+     margin-bottom: 20px;
+}
+
+.myActionButton {
+    right: 50px;
+    height: 38px;
+    width: 100px;
+    font-size: 16px;
+    background-color: var(--main-button-color);
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    transition: all 140ms linear;
+}
+
+.myActionButton:hover {
+    background-color: var(--main-button-hover);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.56);
+}
+
+.myActionButton:active {
+    background-color: var(--main-button-active);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.46);
+}

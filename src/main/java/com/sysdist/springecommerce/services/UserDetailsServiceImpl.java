@@ -1,7 +1,7 @@
 package com.sysdist.springecommerce.services;
 
 import com.sysdist.springecommerce.config.MyUserDetails;
-import com.sysdist.springecommerce.model.User;
+import com.sysdist.springecommerce.models.User;
 import com.sysdist.springecommerce.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

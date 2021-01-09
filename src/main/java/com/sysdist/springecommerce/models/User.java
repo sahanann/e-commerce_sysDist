@@ -1,4 +1,4 @@
-package com.sysdist.springecommerce.model;
+package com.sysdist.springecommerce.models;
 
 import javax.persistence.*;
 import java.util.Objects;
