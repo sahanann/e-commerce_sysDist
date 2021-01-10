@@ -6,14 +6,6 @@ import java.util.Objects;
 @Entity
 @Table(name="product")
 public class Product {
-
-    public Product(Long id, String name, double price, int quantity) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.quantity = quantity;
-    }
-
     @Id
     @Column(name = "product_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +15,27 @@ public class Product {
     private double price;
     private int quantity;
 
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @JoinColumn(name="category_id")
+    private Category category;
+
     public Product() {}
+
+    public Product(Long id, String name, double price, int quantity,
+                   Category category) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+        this.category = category;
+    }
+
+    public Product(Long id, String name, double price, int quantity) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
 
     public Long getId() {
         return id;
@@ -83,5 +95,13 @@ public class Product {
     @Override
     public String toString() {
         return super.toString();
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/baseStyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>TVA</th>
+            <th>Total</th>
+        </tr>
+
+        <tr th:each="cartItem: ${cartList}">
+            <td th:text="${cartItem.product.name}"></td>
+            <td th:text="${cartItem.product.price}"></td>
+            <td th:text="${cartItem.count}"></td>
+            <td th:text="${cartItem.getPrice()}"></td>
+        </tr>
+    </table>
+
+    <form th:action="@{/products/checkout}" method="post">
+        <input type="submit" value="Cancel"/>
+    </form>
+
+    <form th:action="@{/products/checkout}" method="post">
+        <input type="submit" value="Confirm"/>
+    </form>
+
+</body>
+</html>

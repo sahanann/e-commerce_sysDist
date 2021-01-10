@@ -40,5 +40,8 @@ public class Cart {
         this.count--;
     }
 
+    public double getPrice() {
+        return product.getPrice() * count;
+    }
 
 }
