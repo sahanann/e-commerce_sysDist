@@ -12,9 +12,11 @@ public class ProductServiceImpl implements ProductService {
 
 
     private final ProductRepository productRepository;
+    private final List<Product> products;
 
     public ProductServiceImpl(ProductRepository productRepository) {
         this.productRepository = productRepository;
+        this.products = (List<Product>) productRepository.findAll();
     }
 
     @Override
@@ -30,5 +32,17 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product findByName(String name) {
         return productRepository.getProductByName(name);
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public Product getProductById(int id) {
+        for (Product p: products)
+            if (p.getId() == id)
+                return p;
+
+            return null;
     }
 }

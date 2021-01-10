@@ -57,6 +57,14 @@ public class Product {
         this.quantity = quantity;
     }
 
+    public void addQuantity(int q) {
+        this.quantity += q;
+    }
+
+    public void decQuantity() {
+        this.quantity -= 1;
+    }
+
     @Override
     public int hashCode() {
         return id != null ? id.hashCode() : 0;
