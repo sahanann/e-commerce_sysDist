@@ -58,3 +58,69 @@ body {
     /*appearance: button;*/
     text-decoration: none;
 }
+
+
+.topBarBox {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    padding: 12px;
+    width: 60%;
+    margin: auto;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    z-index: -1;
+}
+
+.topBarButton {
+
+}
+
+#cartButton {
+    position: absolute;
+    right: 10px;
+    float: right;
+}
+
+#logoutButton {
+    position: absolute;
+    left: 10px;
+    float: left;
+}
+
+.topBarBox h1 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.myActionButton {
+    height: 38px;
+    width: 100px;
+    font-size: 16px;
+    background-color: var(--main-button-color);
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 14px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    transition: all 140ms linear;
+}
+
+.myActionButton:hover {
+    background-color: var(--main-button-hover);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.56);
+}
+
+.myActionButton:active {
+    background-color: var(--main-button-active);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.46);
+}

@@ -5,39 +5,50 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
+
     <link rel="stylesheet" type="text/css" href="/css/baseStyle.css">
+    <link rel="stylesheet" type="text/css" href="/css/productStyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<!--    <link rel="stylesheet" type="text/css"-->
+<!--          href="productStyle.css">-->
 
 </head>
 <body>
 
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Stock</th>
-    </tr>
-    <tr th:each="product: ${products}">
-        <td th:text="${product.name}"></td>
-        <td th:text="${product.price}"></td>
-        <td th:text="${product.quantity}"></td>
-        <td><label>
-            <input type="text"/>
-            <a th:href="@{/products/{id}(id=${product.id})}">Add to cart</a>
-        </label></td>
-    </tr>
-</table>
+<div class="topBarBox">
 
-<h2>Cart</h2>
-<label th:text="${itemCount}"></label>
+    <h1>HEPL E-Commerce</h1>
+    <form id="logoutButton" th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out" class="myActionButton"/>
+    </form>
+    <form id="cartButton" th:action="@{/products/cart}" method="post">
+        <label th:text="${itemCount}"></label>
+        <input type="submit" value="cart" class="myActionButton"/>
+    </form>
 
-<form th:action="@{/products/cart}" method="post">
-    <input type="submit" value="View cart"/>
-</form>
+</div>
 
-<form th:action="@{/logout}" method="post">
-    <input type="submit" value="Sign Out"/>
-</form>
+<div class="tableHolder">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock</th>
+        </tr>
+        <tr th:each="product: ${products}">
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.price}"></td>
+            <td th:text="${product.quantity}"></td>
+            <td width="100"><label>
+                <a th:href="@{/products/{id}(id=${product.id})}">Add to cart</a>
+            </label></td>
+        </tr>
+    </table>
+</div>
+
+
+
+
 
 </body>
 </html>

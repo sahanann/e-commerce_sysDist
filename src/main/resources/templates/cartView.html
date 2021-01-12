@@ -6,31 +6,48 @@
     <title>Cart</title>
 
     <link rel="stylesheet" type="text/css" href="/css/baseStyle.css">
+    <link rel="stylesheet" type="text/css" href="/css/productStyle.css">
+    <link rel="stylesheet" type="text/css" href="productStyle.css">
+    <link rel="stylesheet" type="text/css" href="baseStyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
 </head>
 <body>
 
-<h1>Shopping Cart</h1>
 
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Qty</th>
-    </tr>
-    <tr th:each="cartItem: ${cartList}">
-        <td th:text="${cartItem.product.name}"></td>
-        <td th:text="${cartItem.product.price}"></td>
-        <td th:text="${cartItem.count}"></td>
-        <td><label>
-            <a th:href="@{/products/cart/delete/{id}(id=${cartItem.product.id})}">Remove</a>
-        </label></td>
-    </tr>
-</table>
 
-<form th:action="@{/products/checkout}" method="post">
-    <input type="submit" value="Checkout"/>
+<div class="topBarBox">
+
+    <h1>HEPL E-Commerce</h1>
+    <form id="logoutButton" th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out" class="myActionButton"/>
+    </form>
+
+</div>
+
+<h1 id="shPosition">Shopping Cart</h1>
+
+<div class="tableHolder customMargin">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Qty</th>
+        </tr>
+        <tr th:each="cartItem: ${cartList}">
+            <td th:text="${cartItem.product.name}"></td>
+            <td th:text="${cartItem.product.price}"></td>
+            <td th:text="${cartItem.count}"></td>
+            <td><label>
+                <a th:href="@{/products/cart/delete/{id}(id=${cartItem.product.id})}">Remove</a>
+            </label></td>
+        </tr>
+    </table>
+</div>
+
+
+<form class="centerItem" th:action="@{/products/checkout}" method="post">
+    <input class="myActionButton" type="submit" value="Checkout"/>
 </form>
 
 </body>

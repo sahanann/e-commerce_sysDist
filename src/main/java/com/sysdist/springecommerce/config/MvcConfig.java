@@ -10,7 +10,7 @@ public  class MvcConfig implements WebMvcConfigurer {
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/notprotected").setViewName("welcomePage");
         registry.addViewController("/").setViewName("welcomePage");
-        registry.addViewController("/protected").setViewName("protected");
+        registry.addViewController("/protected").setViewName("products");
         registry.addViewController("/login").setViewName("login");
         registry.addViewController("/logout").setViewName("disconnected");
         registry.addViewController("/products").setViewName("products");

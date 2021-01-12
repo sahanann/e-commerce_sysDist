@@ -19,7 +19,9 @@ public class Product {
     @JoinColumn(name="category_id")
     private Category category;
 
-    public Product() {}
+    public Product() {
+        category = new Category();
+    }
 
     public Product(Long id, String name, double price, int quantity,
                    Category category) {
